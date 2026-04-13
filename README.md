@@ -8,6 +8,7 @@
 
 ## 檔案索引
 
+- `00-start-here.md`：最小入口（快速進 B 階段）
 - `01-scope-and-goals.md`：重構目標、非目標、交付方式
 - `02-architecture-map.md`：跨專案程式地圖與責任邊界
 - `03-engineering-standards.md`：統一規範（查詢上限、時間、權限、共用邏輯）
@@ -15,7 +16,23 @@
 - `05-progress-status.md`：進度狀態與下一步
 - `06-decisions-and-open-questions.md`：已決策與待確認議題
 - `07-ai-handoff-prompt.md`：給 Cursor AI 的標準起手提示詞
-- `08-architecture-parity-checklist.md`：ACS/3DSS 架構一致性檢查表
+- `08-architecture-parity-checklist.md`：以能力（alert/dashboard）為主軸的架構一致性檢查表
+- `09-parity-example-overview-alert.md`：架構一致性檢查填寫示例（Overview Alert，示例非規格）
+- `10-parity-example-dimp-alert.md`：架構一致性檢查填寫示例（DIMP Alert，示例非規格）
+- `11-flow-separation-design.md`：Alert / Dashboard 分流設計稿（B 階段輸入）
+- `12-b-phase-readiness-check.md`：B 階段進場門檻（Go/No-Go）
+
+## 規格層級（避免混淆）
+
+- **正式規格來源**：`01`、`03`、`04`、`06`、`11`
+- **執行輔助**：`07`、`08`、`12`
+- **示例參考（非規格）**：`09`、`10`
+
+## 推薦使用順序（精簡）
+
+1. 日常設計先讀：`00`、`01`、`03`、`04`、`06`、`11`
+2. 需要正式進場判定再加：`12`
+3. 需要示例才看：`09`、`10`
 
 ## 來源文件（已整併）
 

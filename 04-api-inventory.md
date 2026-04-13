@@ -44,6 +44,20 @@
 | ACS | alert | POST | `/realtime/mastercard-dimp/queryEdit8AbandonmentRate` | `GrafanaRealTimeMastercardDimpApiController#queryEdit8AbandonmentRate` | DIMP Edit8 放棄率 | 同上（1h bucket，無硬上限） | 同上（`<=2000` buckets） | `from_time`、`to_time` | 同上 | 已盤點 |
 | ACS | alert | POST | `/realtime/mastercard-dimp/queryEdit11ScaExemptionRate` | `GrafanaRealTimeMastercardDimpApiController#queryEdit11ScaExemptionRate` | DIMP Edit11 SCA 豁免率 | 同上（1h bucket，無硬上限） | 同上（`<=2000` buckets） | `from_time`、`to_time` | 同上 | 已盤點 |
 
+## Dashboard 能力盤點（本輪補齊）
+
+> 說明：此段先做「能力/路徑前綴」層級盤點，後續再逐 API 明細化。
+
+| 能力域 | ACS 路徑前綴（範例） | 3DSS 路徑前綴（範例） | 備註 |
+|--------|----------------------|------------------------|------|
+| Overview | `/realtime/overview-adv/*` | `/3dss/overview/*` | 兩邊都有，細節指標不同屬正常 |
+| Insight | `/realtime/transactioninsight/*` | `/3dss/insight/*` | 命名與指標集不同，需文件化對齊 |
+| Error | `/realtime/error/*` | `/3dss/error/*` | 皆有錯誤監控能力 |
+| Performance | `/realtime/performance/*` | `/3dss/performance/*` | 皆有效能監控能力 |
+| Card Scheme | `/realtime/card-scheme-reason/*`、`/realtime/mastercard*`、`/realtime/visa/*` | `/3dss/card-scheme/*`、`/3dss/card-scheme-connection/*` | 能力近似但切分方式不同 |
+| System Monitor | `/realtime/system_monitor/*` | （待確認是否有同領域 API） | 3DSS 需再盤點 |
+| Challenge / FP2 / Issuer Stats | `/realtime/challenge-verification/*`、`/realtime/fp2/*`、`/realtime/issuer-statistics/*` | （待確認對應能力） | 可能屬 ACS 特化能力 |
+
 ## 3DSS 對應 API（與 ACS 首批 9 支對照）
 
 | ACS API | 3DSS 對應 API | 3DSS Controller | 差異摘要 |
@@ -73,3 +87,4 @@
 | I-03 | 時間 | DDoS Alert API 在 Controller 強制 `now-2m ~ now`，忽略請求時間 | 呼叫端難以預期，與其他 API 行為不一致 |
 | I-04 | 權限/識別 | ACS 使用 `X-BANK-ID` + `issuerOid`，3DSS 使用 `X-REQUESTOR-ID` + `requestorOid` | 跨系統共用邏輯抽取時容易混淆 |
 | I-05 | 產品能力 | ACS 有 DDoS 與黑名單告警 API，3DSS 目前無對應同名告警 API | 已決議為正常差異，重點改為文件標示清楚 |
+| I-06 | 流程邊界 | 目前存在由工具方法自動判斷 alert/token 模式取得識別的作法 | 容易造成 alert/dashboard 混流與維護困難 |

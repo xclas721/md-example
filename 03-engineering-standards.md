@@ -31,6 +31,15 @@
 - `X-API-Key` 專供 alert 背景呼叫，不走 dashboard render 流程。
 - `X-API-Key`、`hitrustSsoToken`、`X-BANK-ID` / `X-REQUESTOR-ID` 的優先順序需一致且可測。
 
+## 4.1) Alert / Dashboard 分流原則（強制）
+
+- Alert 與 Dashboard 必須是兩條明確流程，不可由同一工具方法自動判斷並切換。
+- 禁止新增「模式自動判斷工具」作為主流程入口（例如 `get*ForGrafana()` 內部同時判斷 API Key / token 模式）。
+- 可接受做法：
+  - Alert controller 呼叫 alert 專用 resolver/service
+  - Dashboard controller 呼叫 dashboard 專用 resolver/service
+- 任何跨流程共用，只能是純函式（例如時間轉換、字串正規化），不得包含流程分支。
+
 ## 5) 共用邏輯抽取原則
 
 - 抽共用以「相同行為 + 相同輸入輸出」為前提，避免過度抽象。

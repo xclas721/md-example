@@ -15,11 +15,17 @@
 - [x] 建立決策與待確認清單：`docs/grafana/06-decisions-and-open-questions.md`
 - [x] 建立 AI 提示詞模板：`docs/grafana/07-ai-handoff-prompt.md`
 - [x] 建立架構一致性檢查表：`docs/grafana/08-architecture-parity-checklist.md`
+- [x] 建立檢查表填寫範例：`docs/grafana/09-parity-example-overview-alert.md`
+- [x] 建立檢查表填寫範例：`docs/grafana/10-parity-example-dimp-alert.md`
+- [x] 建立分流設計稿：`docs/grafana/11-flow-separation-design.md`
+- [x] 建立 B 階段進場門檻：`docs/grafana/12-b-phase-readiness-check.md`
 - [x] ACS 首批 9 支 alert API：補齊上限現況/目標草案、時間參數、權限檢查點
 - [x] ACS DIMP 5 支 alert API：補齊路徑、Controller、上限草案與權限檢查點
 - [x] 3DSS 對應 API 與 ACS 差異表（首版）
 - [x] 不一致清單（上限/時間/權限/產品能力）首版
 - [x] 依使用者決策完成 Q-001~Q-004、Q-101、Q-102 定稿（文件層）
+- [x] 補齊 dashboard 能力盤點（能力/路徑前綴層級）
+- [x] 新增 Alert/Dashboard 強制分流決策（禁止模式自動判斷工具）
 
 ## 進行中
 
@@ -29,6 +35,8 @@
 - [x] 時間語意與權限流程差異表（文件版）
 - [ ] 將目標上限改成可設定參數並落地到程式
 - [ ] 建立端到端對齊驗證腳本（Vue route -> backend URL -> iframe query）
+- [ ] 移除「自動判斷 alert/token」混流工具，改為分流 resolver/service
+- [x] 依 `12-b-phase-readiness-check.md` 完成第一次 Go/No-Go 評估（文件版，Go 條件式）
 
 ## 下一個里程碑
 

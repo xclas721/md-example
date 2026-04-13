@@ -49,6 +49,15 @@
   - 功能差異要被文件化，不靠程式註解零散描述。
   - 回歸驗證流程一致，驗證內容可依系統差異調整。
 
+### D-009 Alert 與 Dashboard 流程強制分流
+
+- 決議：Alert 與 Dashboard 為不同存取流程，程式層不得透過「單一工具自動判斷目前是 alert 還是 dashboard」來決定行為。
+- 原因：混流工具會讓責任邊界模糊，導致維護與除錯困難。
+- 實務要求：
+  - Alert API 只走 `X-API-Key` 背景流程。
+  - Dashboard API 只走使用者 token + RBAC 流程。
+  - Resolver/Utils 依流程分開（例如 AlertResolver、DashboardResolver），不要以同一方法內 `if token/apiKey` 分支混用。
+
 ### D-006 共用層切分策略（Q-101）
 
 - 決議：先做「系統內共用」，不先強推跨 ACS/3DSS 合併模組。
