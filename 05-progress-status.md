@@ -19,6 +19,8 @@
 - [x] 建立檢查表填寫範例：`docs/grafana/10-parity-example-dimp-alert.md`
 - [x] 建立分流設計稿：`docs/grafana/11-flow-separation-design.md`
 - [x] 建立 B 階段進場門檻：`docs/grafana/12-b-phase-readiness-check.md`
+- [x] 建立 B 階段設計定稿：`docs/grafana/13-b-phase-design.md`
+- [x] 建立 C 階段第一批改碼清單：`docs/grafana/14-c-phase-first-batch-plan.md`
 - [x] ACS 首批 9 支 alert API：補齊上限現況/目標草案、時間參數、權限檢查點
 - [x] ACS DIMP 5 支 alert API：補齊路徑、Controller、上限草案與權限檢查點
 - [x] 3DSS 對應 API 與 ACS 差異表（首版）

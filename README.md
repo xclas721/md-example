@@ -21,11 +21,13 @@
 - `10-parity-example-dimp-alert.md`：架構一致性檢查填寫示例（DIMP Alert，示例非規格）
 - `11-flow-separation-design.md`：Alert / Dashboard 分流設計稿（B 階段輸入）
 - `12-b-phase-readiness-check.md`：B 階段進場門檻（Go/No-Go）
+- `13-b-phase-design.md`：B 階段設計定稿
+- `14-c-phase-first-batch-plan.md`：C 階段第一批改碼清單
 
 ## 規格層級（避免混淆）
 
-- **正式規格來源**：`01`、`03`、`04`、`06`、`11`
-- **執行輔助**：`07`、`08`、`12`
+- **正式規格來源**：`01`、`03`、`04`、`06`、`11`、`13`
+- **執行輔助**：`07`、`08`、`12`、`14`
 - **示例參考（非規格）**：`09`、`10`
 
 ## 推薦使用順序（精簡）
